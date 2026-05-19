@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevate Media</title>
+  <meta name="description" content="Elevate Media offers content planning, creation, and social media management for growing brands." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f7ff;
+      --surface: #ffffff;
+      --card: #e7ebff;
+      --text: #121a3d;
+      --muted: #5f678d;
+      --line: rgba(18, 26, 61, 0.1);
+      --accent: #1b275f;
+      --accent-dark: #121b47;
+      --radius: 22px;
+      --shadow: 0 18px 40px rgba(38, 28, 17, 0.08);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(246, 247, 255, 0.88);
+      border-bottom: 1px solid rgba(31, 26, 23, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #1b275f, #bfc8ff);
+      display: grid;
+      place-items: center;
+      color: white;
+      box-shadow: var(--shadow);
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover { background: var(--accent-dark); }
+
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255,255,255,0.55);
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(191, 200, 255, 0.35);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1, h2 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      max-width: 10ch;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 58ch;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid rgba(31, 26, 23, 0.08);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(191,200,255,0.5), transparent 35%);
+      pointer-events: none;
+    }
+
+    .mini-card {
+      background: white;
+      border-radius: 22px;
+      padding: 18px;
+      border: 1px solid rgba(31,26,23,0.06);
+      margin-top: 16px;
+    }
+
+    .mini-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .section {
+      padding: 40px 0 24px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 58ch;
+      margin: 10px 0 0;
+    }
+
+    h2 { font-size: clamp(2.2rem, 4vw, 3.4rem); }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: 28px;
+      padding: 24px;
+      border: 1px solid rgba(31, 26, 23, 0.08);
+      box-shadow: 0 10px 30px rgba(38, 28, 17, 0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.18rem;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .card li { margin-bottom: 8px; }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    .package {
+      background: var(--surface);
+      border-radius: 30px;
+      padding: 26px;
+      border: 1px solid rgba(31, 26, 23, 0.08);
+      box-shadow: 0 10px 30px rgba(38, 28, 17, 0.05);
+    }
+
+    .package.featured {
+      background: #1f6b68;
+      color: white;
+      transform: translateY(-8px);
+    }
+
+    .package.featured p,
+    .package.featured li,
+    .package.featured .price-note { color: rgba(255,255,255,0.82); }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(31,26,23,0.06);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .featured .tag {
+      background: rgba(255,255,255,0.14);
+      color: white;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 8px 0;
+    }
+
+    .price-note {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .step {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 22px;
+      min-height: 180px;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .cta {
+      padding: 56px 0 72px;
+    }
+
+    .cta-panel {
+      background: var(--text);
+      color: white;
+      border-radius: 34px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta-panel p { color: rgba(255,255,255,0.75); }
+
+    .site-footer {
+      padding: 0 0 32px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(31,26,23,0.08);
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .cta-panel,
+      .section-head,
+      .service-grid,
+      .package-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .package.featured { transform: none; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 42px; }
+      .card, .package, .hero-card, .cta-panel, .step { padding: 20px; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-mark">E</span>
+        <span>Elevate Media</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-primary">Inquire</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Content planning, creation, and management</span>
+          <h1>Helping brands show up online with clarity.</h1>
+          <p>Elevate Media is a boutique social media business built for growing brands that want better content, stronger consistency, and a more polished online presence.</p>
+          <div class="hero-actions">
+            <a href="#packages" class="btn btn-primary">View packages</a>
+            <a href="#contact" class="btn btn-secondary">Work with Elevate</a>
+          </div>
+          <div class="hero-note">Strategy-led support for brands that want planning, creation, or full social media management.</div>
+        </div>
+        <div class="hero-card">
+          <div class="mini-label">Inside Elevate</div>
+          <h3 style="margin:0 0 10px;font-size:1.4rem;">A simpler way to stay consistent online.</h3>
+          <p style="margin:0;color:var(--muted);">From monthly content plans to done-for-you management, each offer is designed to meet brands at the level of support they actually need.</p>
+          <div class="mini-card">
+            <div class="mini-label">Popular package</div>
+            <strong style="font-size:1.1rem;display:block;margin-bottom:6px;">Growth</strong>
+            <span style="color:var(--muted);">Planning + creation + support with posting</span>
+          </div>
+          <div class="mini-card">
+            <div class="mini-label">Best for</div>
+            <strong style="font-size:1.1rem;display:block;margin-bottom:6px;">Growing brands</strong>
+            <span style="color:var(--muted);">Businesses that need content support without a full in-house team.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Services</h2>
+            <p>Each service is built to help brands stay clear, consistent, and active online through thoughtful strategy and polished execution.</p>
+          </div>
+        </div>
+        <div class="service-grid">
+          <article class="card">
+            <h3>Content Planning</h3>
+            <p>Monthly direction for what to post, when to post, and how to keep your content aligned with your brand.</p>
+            <ul>
+              <li>Monthly strategy</li>
+              <li>Content pillars</li>
+              <li>30-day calendar</li>
+              <li>Caption prompts</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Content Creation</h3>
+            <p>Branded content support for businesses that want polished graphics, ideas, and social-ready visuals.</p>
+            <ul>
+              <li>Branded graphics</li>
+              <li>Carousel concepts</li>
+              <li>Reel ideas</li>
+              <li>Caption writing</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Social Management</h3>
+            <p>Hands-off support for brands that want their social media handled with consistency and intention.</p>
+            <ul>
+              <li>Scheduling and posting</li>
+              <li>Comment and DM monitoring</li>
+              <li>Monthly analytics</li>
+              <li>Strategy check-ins</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="packages">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Packages</h2>
+            <p>Simple tiers designed to meet brands at different stages, from planning support to full management.</p>
+          </div>
+        </div>
+        <div class="package-grid">
+          <article class="package">
+            <span class="tag">Essential</span>
+            <h3>Content Planning</h3>
+            <div class="price">Starting at $600</div>
+            <div class="price-note">Monthly</div>
+            <ul>
+              <li>Monthly strategy call</li>
+              <li>30-day content plan</li>
+              <li>Content pillars and themes</li>
+              <li>Caption prompts</li>
+              <li>Hashtag suggestions</li>
+            </ul>
+          </article>
+
+          <article class="package featured">
+            <span class="tag">Growth</span>
+            <h3>Planning + Creation</h3>
+            <div class="price">Starting at $1,200</div>
+            <div class="price-note">Monthly</div>
+            <ul>
+              <li>Everything in Essential</li>
+              <li>Caption writing</li>
+              <li>Branded post graphics</li>
+              <li>Short-form video ideas</li>
+              <li>Scheduling support</li>
+            </ul>
+          </article>
+
+          <article class="package">
+            <span class="tag">Signature</span>
+            <h3>Full Management</h3>
+            <div class="price">Starting at $2,000</div>
+            <div class="price-note">Monthly</div>
+            <ul>
+              <li>Everything in Growth</li>
+              <li>Scheduling and publishing</li>
+              <li>Comment and DM monitoring</li>
+              <li>Monthly reporting</li>
+              <li>Ongoing strategy support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Process</h2>
+            <p>A simple, client-friendly workflow designed to make content feel more manageable and more effective.</p>
+          </div>
+        </div>
+        <div class="process-grid">
+          <article class="step">
+            <div class="step-number">01</div>
+            <h3>Discover</h3>
+            <p>We start with your goals, offers, audience, and brand voice.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">02</div>
+            <h3>Plan</h3>
+            <p>Your content pillars, themes, and monthly direction are mapped out clearly.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">03</div>
+            <h3>Create</h3>
+            <p>Content is built with your brand in mind, from captions to visuals.</p>
+          </article>
+          <article class="step">
+            <div class="step-number">04</div>
+            <h3>Elevate</h3>
+            <p>Your online presence becomes more polished, consistent, and intentional.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <h2>Ready to elevate your brand online?</h2>
+            <p>Whether you need a monthly content plan or full social media support, Elevate Media is built to help brands grow with more clarity and consistency.</p>
+          </div>
+          <div>
+            <a class="btn btn-primary" href="mailto:elevatemediallc5@gmail.com">elevatemediallc5@gmail.com</a>
+            <p style="margin-top:16px;">Use this site as your first simple home base, then connect it to your Instagram, inquiry form, or booking link.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>Elevate Media</div>
+      <div>Content planning, creation, and management for growing brands.</div>
+    </div>
+  </footer>
+</body>
+</html>
