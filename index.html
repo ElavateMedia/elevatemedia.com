@@ -275,6 +275,51 @@
     .package.featured li,
     .package.featured .price-note { color: rgba(255,255,255,0.82); }
 
+    .em-alacarte-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(236,240,255,0.9));
+      border-radius: 30px;
+      padding: 26px;
+      border: 1px solid rgba(31, 26, 23, 0.08);
+      box-shadow: 0 10px 30px rgba(38, 28, 17, 0.05);
+    }
+
+    .em-alacarte-card h3 {
+      margin: 0 0 18px;
+      font-size: 1.38rem;
+    }
+
+    .em-alacarte-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .em-alacarte-price {
+      display: block;
+      margin: 0 0 18px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    .em-alacarte-unit {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .em-alacarte-card ul {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .em-alacarte-card li { margin-bottom: 8px; }
+
     .tag {
       display: inline-block;
       padding: 8px 12px;
@@ -377,7 +422,7 @@
 
     @media (max-width: 640px) {
       .hero { padding-top: 42px; }
-      .card, .package, .hero-card, .cta-panel, .step { padding: 20px; }
+      .card, .package, .em-alacarte-card, .hero-card, .cta-panel, .step { padding: 20px; }
       .footer-inner { flex-direction: column; }
     }
   </style>
@@ -522,6 +567,29 @@
               <li>Ongoing strategy support</li>
             </ul>
           </article>
+
+          <article class="em-alacarte-card">
+            <span class="tag">Custom</span>
+            <h3>Custom Content &amp; Support</h3>
+
+            <p class="em-alacarte-price">
+              Custom Quote
+              <span class="em-alacarte-unit">tailored to your project</span>
+            </p>
+
+            <p>
+              Need something beyond a single graphic or video edit?
+              Let's build a project around your goals.
+            </p>
+
+            <ul>
+              <li>Multi-slide carousel posts</li>
+              <li>Content bundles and campaign assets</li>
+              <li>Account setup and profile updates</li>
+              <li>Scheduling support</li>
+              <li>Scope, pricing, and timeline agreed in advance</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -567,9 +635,9 @@
             <p>Whether you need a monthly content plan or full social media support, Elevate Media is built to help brands grow with more clarity and consistency.</p>
           </div>
           <div style="display:grid; gap:12px; justify-items:start;">
-            <a class="btn btn-primary" href="mailto:elevatemediallc5@gmail.com"><span aria-hidden="true" style="display:inline-flex; margin-right:8px; line-height:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20V18H4V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>elevatemediallc5@gmail.com</a>
-            <a class="btn btn-primary" href="tel:5862029436"><span aria-hidden="true" style="display:inline-flex; margin-right:8px; line-height:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 3.5H10L11.4 7.1L9.7 9.2C10.57 10.97 12.03 12.43 13.8 13.3L15.9 11.6L19.5 13V16.4C19.5 16.93 19.29 17.43 18.91 17.8C18.54 18.18 18.03 18.4 17.5 18.4C13.79 18.17 10.29 16.58 7.67 13.96C5.05 11.34 3.46 7.84 3.23 4.13C3.23 3.6 3.44 3.09 3.82 2.72C4.19 2.34 4.7 2.13 5.23 2.13H6.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>586-202-9436</a>
-            <a class="btn btn-primary" href="https://www.instagram.com/elevatemedia_com?igsh=eHVrN21jYjN3ZzY1&utm_source=qr" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="display:inline-flex; margin-right:8px; line-height:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3.5" y="3.5" width="17" height="17" rx="4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor"/></svg></span>@elevatemedia_com</a>
+            <a class="btn btn-primary" href="mailto:elevatemediallc5@gmail.com"><span aria-hidden="true" style="display:inline-flex; margin-right:8px; line-height:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6.5C4 5.67 4.67 5 5.5 5h13c.83 0 1.5.67 1.5 1.5v11c0 .83-.67 1.5-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5v-11Zm2 1.5 6 4.5 6-4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Email</a>
+            <a class="btn btn-primary" href="tel:5862029436"><span aria-hidden="true" style="display:inline-flex; margin-right:8px; line-height:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 4.5h3.1l1.1 4.2-1.8 1.8a15.2 15.2 0 0 0 6.9 6.9l1.8-1.8 4.2 1.1v3.1a1.7 1.7 0 0 1-1.7 1.7A17.4 17.4 0 0 1 5.3 6.2a1.7 1.7 0 0 1 1.7-1.7Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Call</a>
+            <a class="btn btn-primary" href="https://www.instagram.com/elevatemedia_com?igsh=eHVrN21jYjN3ZzY1&utm_source=qr" target="_blank" rel="noopener noreferrer"><span aria-hidden="true" style="display:inline-flex; margin-right:8px; line-height:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3.5" y="3.5" width="17" height="17" rx="4" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg></span>Instagram</a>
             <p style="margin-top:8px;"></p>
           </div>
         </div>
